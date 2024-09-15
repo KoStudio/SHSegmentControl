@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish' /// 发布到Jitpack的配置
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -16,6 +17,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    /// 发布到Jitpack的配置
+    afterEvaluate {
+        publishing {
+            publications {
+                release(MavenPublication) {
+                    from components.release          // 表示发布 release（jitpack 都不会使用到）
+                    groupId = 'com.github.KoStudio'  // 依赖库的组id （jitpack 都不会使用到）
+                    artifactId = 'segmentcontrol'       // 依赖库的名称 （jitpack 都不会使用到）
+                    version ="1.1.7"                 // 当前版本号（jitpack 都不会使用到）
+                }
+            }
+        }
+    }
 }
 
-apply from: 'bintray.gradle'
+//apply from: 'bintray.gradle'

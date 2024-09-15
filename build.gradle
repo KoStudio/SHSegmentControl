@@ -2,21 +2,27 @@
 
 buildscript {
     repositories {
-        jcenter()
+        google()
         mavenCentral()
+        jcenter()
+
+        maven { url 'https://jitpack.io' }
     }
     //noinspection GroovyAssignabilityCheck
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'com.android.tools.build:gradle:7.0.4'
+        //classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        //classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
     }
 }
 
 allprojects {
     repositories {
-        jcenter()
+        google()
         mavenCentral()
+        jcenter()
+
+        maven { url 'https://jitpack.io' }
     }
 }
 
