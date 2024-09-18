@@ -14,11 +14,19 @@
 
 ### 添加依赖到build.gradle：
 
+~~compile 'com.7heaven.widgets:segmentcontrol:1.17'~~
 
 ```groovy
+
+maven { url 'https://jitpack.io' }
+
 dependencies {
-    compile 'com.7heaven.widgets:segmentcontrol:1.17'
-}
+
+    implementation 'com.github.KoStudio:SHSegmentControl:1.17.1'
+
+}	
+
+
 ```
 
 **相关属性:**
